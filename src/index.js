@@ -15,14 +15,24 @@ app.listen(PORT, async () => {
 
     const repo = new TweetRepository();
 
-    const k = await repo.getAll(0,4);
-    console.log(k[2].contentWithEmail);
+    // const k = await repo.getAll(0,4);
+    // console.log(k[2].contentWithEmail);
 
     // const k = await repo.getAll(4, 4);
     // console.log(k);
 
-    // const comment = await Comment.create({content: 'comment using seprate comment models on 6th tweet'});
-    // console.log(comment);
+    await repo.create({content: 'this is 10th tweet', userEmail: 'thalaForAReason@gmail.com'});
+    
+    // const tweetId = await repo.get('65ab7ed7a438a88cc036c4f8');
+    // console.log(tweetId);
+    // const comment = await Comment.create({content: 'this is comment on 10th tweet'});
+    // tweetId.comments.push(comment);
+    // await tweetId.save();
+    // console.log(tweetId);
+
+    // const t = await repo.getUserWithComment('65ab7ed7a438a88cc036c4f8');
+    // console.log();
+
 
     // k.comments.push(comment);
     // await k.save();
